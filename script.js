@@ -1,6 +1,6 @@
 "Use Strict";
 const bookDisplay = document.querySelector(".book-display");
-// const btnRemoveBook = [...document.querySelectorAll(".btn-card-remove")];
+const btnRemoveBook = [...document.querySelectorAll(".btn-card-remove")];
 const overlay = document.querySelector(".overlay");
 const newBookForm = document.querySelector("form");
 const btnSubmit = document.querySelector(".btn-form-submit");
@@ -10,6 +10,12 @@ const authorInput = document.querySelector("#author");
 const pagesInput = document.querySelector("#pages");
 const statusInput = document.querySelector("#status");
 
+btnRemoveBook.forEach(function (btn, i) {
+  btn.addEventListener("click", function () {
+    document.querySelector(`.card--${i}`).remove();
+    myLibrary.splice(i, 1);
+  });
+});
 const myLibrary = [
   { title: "Harry Potter", author: "J.K. Rowling", pages: 345 },
 ];
@@ -60,28 +66,9 @@ btnSubmit.addEventListener("click", function (e) {
   ].reverse();
 
   btnRemoveBook.forEach(function (btn, i) {
-    btn.addEventListener("click", function (e) {
+    btn.addEventListener("click", function () {
       document.querySelector(`.card--${i}`).remove();
-      console.log(i);
-      console.log(e.target.classList.value.includes(i));
-      console.log(e);
-      if (e.target.toString().includes(`${i}`)) console.log(e.target, i);
-      // myLibrary.splice(i, 1);
-      // bookDisplay.innerHTML = "";
-      // myLibrary.forEach((book, i) => {
-      //   bookDisplay.insertAdjacentHTML(
-      //     "afterbegin",
-      //     `<div class="card card--${i}">
-      //     <div class="card-title">Title: ${book.title}</div>
-      //     <div class="card-author">Author: ${book.author}</div>
-      //     <div class="card-pages">${book.pages} Pages</div>
-      //     <div class="card-btns">
-      //     <button class="btn btn-card-read" type="button">Read</button>
-      //     <button class="btn btn-card-remove" type="button">Remove</button>
-      //     </div>
-      //     </div>`
-      //   );
-      // });
+      myLibrary.splice(i, 1);
     });
   });
   console.log(btnRemoveBook);
