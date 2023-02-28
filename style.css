@@ -48,19 +48,18 @@ button {
 }
 
 .book-display {
+  display: grid;
   border: 1px solid black;
   width: 500px;
   padding: 100px;
 }
-th {
-  padding: 20px;
-  border: 1px solid black;
-}
-td {
-  border: 1px solid black;
-  padding: 10px;
-}
 
-.hello {
-  color: red;
+.card {
+  display: grid;
+  padding: 50px;
+  place-items: center;
+  gap: 16px;
+  border: 1px solid red;
+  height: 100px;
+  background-color: yellowgreen;
 }

@@ -2,7 +2,7 @@
 const bookDisplay = document.querySelector(".book-display");
 const overlay = document.querySelector(".overlay");
 const newBookForm = document.querySelector("form");
-const btnSubmit = document.querySelector(".btn-submit");
+const btnSubmit = document.querySelector(".btn-form-submit");
 const btnNew = document.querySelector(".btn-new");
 const titleInput = document.querySelector("#title");
 const authorInput = document.querySelector("#author");
@@ -13,26 +13,16 @@ const myLibrary = [
   { title: "Harry Potter", author: "J.K. Rowling", pages: 345 },
 ];
 
-const Book = function (title, author, pages, read) {
+const Book = function (title, author, pages) {
   this.title = title;
   this.author = author;
   this.pages = pages;
-  this.read = read;
 };
-
-Book.prototype.info = function () {
-  return `${this.title} ${this.author} ${this.pages} ${this.read}`;
-};
-
-// const addBookToLibrary = function (book) {
-//   bookDisplay.appendChild(book);
-// };
 
 const clearInputs = function () {
   titleInput.value = "";
   authorInput.value = "";
   pagesInput.value = "";
-  statusInput.value = "";
 };
 
 btnSubmit.addEventListener("click", function (e) {
@@ -41,25 +31,25 @@ btnSubmit.addEventListener("click", function (e) {
   const newBook = new Book(
     titleInput.value,
     authorInput.value,
-    pagesInput.value,
-    statusInput.value
+    pagesInput.value
   );
+
   //Add newBook to array
   myLibrary.push(newBook);
+
   //Display New Book on Page
   bookDisplay.innerHTML = "";
   myLibrary.forEach((book, i) => {
     bookDisplay.insertAdjacentHTML(
       "afterbegin",
-
       `<div class="card card--${i}">
-      <div class="card-title">${book.title}</div>
-      <div class="card-author">${book.author}</div>
-      <div class="card-pages">${book.pages}</div>
-      <button class="btn btn-card-read" type="button">Read</button>
-      <button class="btn btn-card-remove" type="button">Remove</button>
-      <!-- <div class="card-title">J.K. Rowling</div>
-      <div class="card-title">J.K. Rowling</div> -->
+      <div class="card-title">Title: ${book.title}</div>
+      <div class="card-author">Author: ${book.author}</div>
+      <div class="card-pages">${book.pages} Pages</div>
+      <div class="card-btns">
+          <button type="button">Read</button>
+          <button type="button">Remove</button>
+        </div>
     </div>`
     );
   });

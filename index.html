@@ -23,60 +23,27 @@
       </div>
       <div class="form-pages">
         <label for="pages">Pages</label
-        ><input type="number" name="pages" id="pages" />
+        ><input type="number" name="pages" id="pages" min="10" max="10000" />
       </div>
-      <div class="form-status">
-        <label for="status">Status</label
-        ><input type="text" name="status" id="status" />
+      <div class="btn-form-read-container">
+        <label for="status">Status</label>
+        <button class="btn btn-form-read" type="button">Read</button>
       </div>
-      <div class="btn btn-submit">
-        <label for="submit">Submit</label><button type="submit">Submit</button>
+      <div class="btn-submit-container">
+        <label for="submit">Submit</label>
+        <button class="btn btn-form-submit" type="submit">Submit</button>
       </div>
     </form>
     <div class="book-display">
       <div class="card">
-        <div class="card-title">Harry Potter</div>
-        <div class="card-author">J.K. Rowling</div>
-        <div class="card-pages">345</div>
-        <button type="button">Read</button>
-        <button type="button">Remove</button>
-        <!-- <div class="card-title">J.K. Rowling</div>
-        <div class="card-title">J.K. Rowling</div> -->
+        <div class="card-title">Title: Harry Potter</div>
+        <div class="card-author">Author: J.K. Rowling</div>
+        <div class="card-pages">345 Pages</div>
+        <div class="card-btns">
+          <button class="btn btn-card-read" type="button">Read</button>
+          <button class="btn btn-card-remove" type="button">Remove</button>
+        </div>
       </div>
-      <!-- <table>
-        <thead>
-          <tr>
-            <th scope="col">Title</th>
-            <th scope="col">Author</th>
-            <th scope="col">Pages</th>
-            <th scope="col">Status</th>
-            <th scope="col">Remove</th>
-          </tr>
-        </thead>
-        <tbody class="add-book">
-          <tr>
-            <td>J.K Rowling</td>
-            <td>Harry Potter and the Prisoner of Azkaban</td>
-            <td>743</td>
-            <td><button type="button">Read</button></td>
-            <td><button type="button">Remove</button></td>
-          </tr>          
-          <tr>
-            <td>J.R.R Tolkien</td>
-            <td>Lord of The Rings</td>
-            <td>445</td>
-            <td><button type="button">Read</button></td>
-            <td><button type="button">Remove</button></td>
-          </tr>
-          <tr>
-            <td>The Land</td>
-            <td>Mildred D. Taylor</td>
-            <td>234</td>
-            <td><button type="button">Read</button></td>
-            <td><button type="button">Remove</button></td>
-          </tr>
-        </tbody>
-      </table> -->
      
     <div class="overlay hidden"></div>
     <script src="script.js"></script>
