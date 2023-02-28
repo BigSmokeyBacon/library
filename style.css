@@ -1,8 +1,66 @@
-.book-display {
-  height: 100px;
-  border: 1px solid black;
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+.hidden {
+  display: none;
 }
 
 form {
-  opacity: 0;
+  border: 1px solid black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  background-color: white;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+input,
+button {
+  padding: 10px;
+  font-family: inherit;
+}
+
+.book-display {
+  border: 1px solid black;
+  width: 500px;
+  padding: 100px;
+}
+th {
+  padding: 20px;
+  border: 1px solid black;
+}
+td {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.hello {
+  color: red;
 }
