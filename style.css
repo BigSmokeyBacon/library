@@ -3,6 +3,26 @@
   margin: 0px;
 }
 
+@font-face {
+  font-family: montserrat;
+  src: url(Montserrat-VariableFont_wght.ttf);
+}
+
+body {
+  font-family: montserrat, sans-serif;
+  display: grid;
+  height: 95vh;
+  grid-template-rows: max-content 1fr max-content;
+  place-items: center;
+}
+
+.header {
+  display: grid;
+  width: 100%;
+  place-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 20px;
+}
 .hidden {
   display: none;
 }
@@ -50,8 +70,13 @@ button {
 .book-display {
   display: grid;
   border: 1px solid black;
-  width: 500px;
-  padding: 100px;
+  grid-template-columns: repeat(auto-fit, 250px);
+  grid-template-rows: repeat(2, 1fr);
+  width: 100%;
+  align-items: center;
+  justify-items: center;
+  gap: 16px;
+  padding: 150px;
 }
 
 .card {
@@ -60,6 +85,6 @@ button {
   place-items: center;
   gap: 16px;
   border: 1px solid red;
-  height: 100px;
+  width: max-content;
   background-color: yellowgreen;
 }
