@@ -1,6 +1,8 @@
 "Use Strict";
 const bookDisplay = document.querySelector(".book-display");
 const btnRemoveBook = [...document.querySelectorAll(".btn-card-remove")];
+const btnCardRead = [...document.querySelectorAll(".btn-card-read")];
+const btnFormRead = document.querySelector(".btn-form-read");
 const overlay = document.querySelector(".overlay");
 const newBookForm = document.querySelector("form");
 const btnSubmit = document.querySelector(".btn-form-submit");
@@ -54,7 +56,7 @@ btnSubmit.addEventListener("click", function (e) {
         <div class="card-author">Author: ${book.author}</div>
         <div class="card-pages">${book.pages} Pages</div>
         <div class="card-btns">
-          <button class="btn btn-card-read" type="button">Read</button>
+          <button class="btn btn-card-read" type="button">not read</button>
           <button class="btn btn-card-remove remove--${i}" type="button">Remove</button>
         </div>
     </div>`
@@ -71,7 +73,21 @@ btnSubmit.addEventListener("click", function (e) {
       myLibrary.splice(i, 1);
     });
   });
-  console.log(btnRemoveBook);
+
+  //Change text content read
+  const btnCardRead = [...document.querySelectorAll(".btn-card-read")];
+  btnCardRead.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      console.log("cock");
+      btn.classList.toggle("read");
+      if (btn.classList.contains("read")) {
+        btn.textContent = "read";
+        console.log("hello");
+      } else {
+        btn.textContent = "not read";
+      }
+    });
+  });
 
   //Clear input fields
   clearInputs();
@@ -108,3 +124,17 @@ const createCard = function () {
   document.appendChild(cardBtnRead);
   document.appendChild(cardBtnRemove);
 };
+
+//Change text content read
+btnCardRead.forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    console.log("cock");
+    btn.classList.toggle("read");
+    if (btn.classList.contains("read")) {
+      btn.textContent = "read";
+      console.log("hello");
+    } else {
+      btn.textContent = "not read";
+    }
+  });
+});
