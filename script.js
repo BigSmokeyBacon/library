@@ -1,7 +1,7 @@
 "Use Strict";
 const bookDisplay = document.querySelector(".book-display");
 const btnRemoveBook = [...document.querySelectorAll(".btn-card-remove")];
-const btnCardRead = [...document.querySelectorAll(".btn-card-read")];
+// const btnCardRead = [...document.querySelectorAll(".btn-card-read")];
 const btnFormRead = document.querySelector(".btn-form-status");
 const overlay = document.querySelector(".overlay");
 const newBookForm = document.querySelector("form");
@@ -61,19 +61,6 @@ btnSubmit.addEventListener("click", function (e) {
   //Add newBook to array
   myLibrary.push(newBook);
 
-  //Change text content read
-  const btnCardRead = [...document.querySelectorAll(".btn-card-read")];
-  btnCardRead.forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      btn.classList.toggle("read");
-      if (btn.classList.contains("read")) {
-        btn.textContent = "read";
-      } else {
-        btn.textContent = "not read";
-      }
-    });
-  });
-
   //Display New Book on Page
   bookDisplay.innerHTML = "";
   myLibrary.forEach((book, i) => {
@@ -95,8 +82,27 @@ btnSubmit.addEventListener("click", function (e) {
     );
   });
 
-  console.log(btnCardRead);
   console.log(myLibrary);
+  //Change text content read
+  const btnCardRead = [
+    ...document.querySelectorAll(".btn-card-read"),
+  ].reverse();
+  btnCardRead.forEach(function (btn, i) {
+    btn.addEventListener("click", function () {
+      myLibrary[i].readStatus === "true"
+        ? (myLibrary[i].readStatus = "false")
+        : (myLibrary[i].readStatus = "true");
+      console.log(myLibrary[i].readStatus);
+      btn.classList.toggle("read");
+      if (btn.classList.contains("read")) {
+        btn.textContent = "read";
+      } else {
+        btn.textContent = "not read";
+      }
+    });
+  });
+  // console.log(btnCardRead);
+
   //Add Event Listener
   const btnRemoveBook = [
     ...document.querySelectorAll(".btn-card-remove"),
@@ -145,9 +151,26 @@ const createCard = function () {
   document.appendChild(cardBtnRemove);
 };
 
+// //Change text content read
+// btnCardRead.forEach(function (btn) {
+//   btn.addEventListener("click", function () {
+//     btn.classList.toggle("read");
+//     if (btn.classList.contains("read")) {
+//       btn.textContent = "read";
+//     } else {
+//       btn.textContent = "not read";
+//     }
+//   });
+// });
+
 //Change text content read
-btnCardRead.forEach(function (btn) {
+const btnCardRead = [...document.querySelectorAll(".btn-card-read")].reverse();
+btnCardRead.forEach(function (btn, i) {
   btn.addEventListener("click", function () {
+    myLibrary[i].readStatus === "true"
+      ? (myLibrary[i].readStatus = "false")
+      : (myLibrary[i].readStatus = "true");
+    console.log(myLibrary[i].readStatus);
     btn.classList.toggle("read");
     if (btn.classList.contains("read")) {
       btn.textContent = "read";
