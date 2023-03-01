@@ -72,7 +72,7 @@ btnSubmit.addEventListener("click", function (e) {
       <div class="card-pages">${book.pages} Pages</div>
       <div class="card-btns">
       <button class="btn btn-card-read ${
-        btnFormRead.classList.contains("read") ? "read" : ""
+        book.readStatus === "true" ? "read" : ""
       }" type="button">${
         book.readStatus === "true" ? "read" : "not read"
       }</button>
