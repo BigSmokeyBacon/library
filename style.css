@@ -9,11 +9,12 @@
 }
 
 body {
+  max-width: 100%;
+  overflow-x: hidden;
   font-family: montserrat, sans-serif;
   display: grid;
-  height: 95vh;
+  height: 100vh;
   grid-template-rows: max-content 1fr max-content;
-  place-items: center;
 }
 
 .header {
@@ -59,6 +60,7 @@ form div {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 4px;
 }
 
 input,
@@ -68,23 +70,27 @@ button {
 }
 
 .book-display {
-  display: grid;
   border: 1px solid black;
+  display: grid;
   grid-template-columns: repeat(auto-fit, 250px);
-  grid-template-rows: repeat(2, 1fr);
-  width: 100%;
-  align-items: center;
-  justify-items: center;
+  align-items: flex-start;
   gap: 16px;
-  padding: 150px;
+  padding: 50px;
 }
 
 .card {
   display: grid;
-  padding: 50px;
+  padding: 20px;
   place-items: center;
   gap: 16px;
   border: 1px solid red;
-  width: max-content;
+  height: 150px;
   background-color: yellowgreen;
+}
+
+.footer {
+  padding: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
