@@ -15,6 +15,16 @@ body {
   display: grid;
   height: 100vh;
   grid-template-rows: max-content 1fr max-content;
+  /* background-image: linear-gradient(
+    45deg,
+    rgba(156, 252, 248, 1),
+    rgba(110, 123, 251, 1)
+  ); */
+  background-image: linear-gradient(
+    45deg,
+    rgba(156, 252, 248, 1),
+    rgb(112 110 251 / 83%)
+  );
 }
 
 .header {
@@ -23,6 +33,12 @@ body {
   place-items: center;
   grid-template-columns: repeat(2, 1fr);
   padding: 20px;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.75),
+    rgba(255, 255, 255)
+  );
+  background-color: rgba(255, 255, 255, 0.75);
 }
 .hidden {
   display: none;
@@ -44,6 +60,7 @@ form {
   padding: 6rem;
   border-radius: 5px;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  gap: 8px;
 }
 
 .overlay {
@@ -53,7 +70,7 @@ form {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(3px);
+  /* backdrop-filter: blur(3px); */
 }
 
 form div {
@@ -70,12 +87,14 @@ button {
 }
 
 .book-display {
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
   display: grid;
   grid-template-columns: repeat(auto-fit, 250px);
   align-items: flex-start;
   gap: 16px;
   padding: 50px;
+  z-index: 1;
 }
 
 .card {
@@ -83,9 +102,10 @@ button {
   padding: 20px;
   place-items: center;
   gap: 16px;
-  border: 1px solid red;
   height: 150px;
-  background-color: yellowgreen;
+  background-color: rgba(255, 255, 255, 0.75);
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
 }
 
 .footer {
@@ -93,4 +113,19 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.75),
+    rgba(255, 255, 255)
+  );
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.read {
+  background-color: yellowgreen;
+  /* color: white; */
+}
+.btn-form-status,
+.btn-card-read {
+  color: black;
 }
