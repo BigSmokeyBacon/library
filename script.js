@@ -34,6 +34,16 @@ const clearInputs = function () {
   pagesInput.value = "";
 };
 
+//Book read status form
+btnFormRead.addEventListener("click", function () {
+  btnFormRead.classList.toggle("read");
+  if (btnFormRead.classList.contains("read")) {
+    btnFormRead.textContent = "read";
+  } else {
+    btnFormRead.textContent = "not read";
+  }
+});
+
 btnSubmit.addEventListener("click", function (e) {
   e.preventDefault();
   //Create newBook from user input
@@ -56,7 +66,9 @@ btnSubmit.addEventListener("click", function (e) {
         <div class="card-author">Author: ${book.author}</div>
         <div class="card-pages">${book.pages} Pages</div>
         <div class="card-btns">
-          <button class="btn btn-card-read" type="button">not read</button>
+          <button class="btn btn-card-read" type="button">${
+            btnFormRead.classList.contains("read") ? "read" : "not read"
+          }</button>
           <button class="btn btn-card-remove remove--${i}" type="button">Remove</button>
         </div>
     </div>`
