@@ -2,6 +2,7 @@
 const bookDisplay = document.querySelector(".book-display");
 const btnRemoveBook = [...document.querySelectorAll(".btn-card-remove")];
 // const btnCardRead = [...document.querySelectorAll(".btn-card-read")];
+const btnClose = document.querySelector(".btn-close");
 const btnFormRead = document.querySelector(".btn-form-status");
 const overlay = document.querySelector(".overlay");
 const newBookForm = document.querySelector("form");
@@ -161,6 +162,7 @@ const createCard = function () {
   document.appendChild(cardBtnRemove);
 };
 
+btnClose.addEventListener("click", closeModal);
 // //Change text content read
 // btnCardRead.forEach(function (btn) {
 //   btn.addEventListener("click", function () {
