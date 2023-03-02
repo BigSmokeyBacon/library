@@ -76,8 +76,12 @@ btnSubmit.addEventListener("click", function (e) {
       }" type="button">${
         book.readStatus === "true" ? "read" : "not read"
       }</button>
-          <button class="btn btn-card-remove remove--${i}" type="button">Remove</button>
-          </div>
+          <button class="btn btn-card-remove" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="4 3 16 18">
+            <path
+              d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M9,8H11V17H9V8M13,8H15V17H13V8Z"
+            />
+          </svg>
     </div>`
     );
   });
