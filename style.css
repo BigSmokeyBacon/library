@@ -173,6 +173,9 @@ label {
   transform: scale(1.02);
 }
 
+span {
+  color: #2e2e2f;
+}
 .footer {
   padding: 29px;
   display: flex;

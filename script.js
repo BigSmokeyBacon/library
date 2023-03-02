@@ -28,8 +28,36 @@ const Book = function (title, author, pages, readStatus) {
   this.readStatus = readStatus;
 };
 
-const harryPotter = new Book("Harry Potter", "J.K Rowling", 365, "false");
+const powerOfNow = new Book("The Power of Now", "Eckhart Tolle", 236, "true");
+const harryPotter = new Book(
+  "Harry Potter and the Goblet of Fire",
+  "J.K Rowling",
+  636,
+  "false"
+);
+const breath = new Book(
+  "Breath: The New Science of a Lost Art",
+  "James Nestor",
+  224,
+  "true"
+);
+const psychopathTest = new Book(
+  "The Psychopath Test",
+  "Jon Ronson",
+  288,
+  "true"
+);
+const heartsInvisibleFuries = new Book(
+  "The Heart's Invisible Furies",
+  "John Boyne",
+  700,
+  "false"
+);
+myLibrary.push(powerOfNow);
 myLibrary.push(harryPotter);
+myLibrary.push(breath);
+myLibrary.push(psychopathTest);
+myLibrary.push(heartsInvisibleFuries);
 
 const clearInputs = function () {
   titleInput.value = "";
@@ -89,7 +117,7 @@ btnSubmit.addEventListener("click", function (e) {
             </div>
             <div class="card-btns">
             <button class="btn btn-card-read ${
-              book.readStatus === "true" ? "Read" : ""
+              book.readStatus === "true" ? "read" : ""
             }" type="button">${
           book.readStatus === "true" ? "Read" : "Not Read"
         }</button>
