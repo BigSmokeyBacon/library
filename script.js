@@ -95,7 +95,6 @@ overlay.addEventListener("click", toggleModal);
 
 btnCardRead.forEach(changeCardReadStatus);
 
-//Book read status form
 btnFormRead.addEventListener("click", function () {
   btnFormRead.classList.toggle("read");
   if (btnFormRead.classList.contains("read")) {
@@ -113,7 +112,6 @@ btnSubmit.addEventListener("click", function (e) {
     authorInput.value !== "" &&
     pagesInput.value !== ""
   ) {
-    //Create newBook from user input
     const newBook = new Book(
       titleInput.value,
       authorInput.value,
@@ -121,10 +119,8 @@ btnSubmit.addEventListener("click", function (e) {
       `${btnFormRead.classList.contains("read") ? "true" : "false"}`
     );
 
-    //Add newBook to array
     myLibrary.push(newBook);
 
-    //Display New Book on Page
     bookDisplay.innerHTML = "";
     myLibrary.forEach((book, i) => {
       bookDisplay.insertAdjacentHTML(
@@ -155,13 +151,11 @@ btnSubmit.addEventListener("click", function (e) {
       );
     });
 
-    // Change text content read
     const btnCardRead = [
       ...document.querySelectorAll(".btn-card-read"),
     ].reverse();
     btnCardRead.forEach(changeCardReadStatus);
 
-    //Add Event Listener
     const btnRemoveBook = [
       ...document.querySelectorAll(".btn-card-remove"),
     ].reverse();
@@ -173,7 +167,6 @@ btnSubmit.addEventListener("click", function (e) {
       });
     });
 
-    //Clear input fields
     clearInputs();
     toggleModal();
   }
