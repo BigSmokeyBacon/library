@@ -35,16 +35,16 @@ const clearInputs = function () {
   authorInput.value = "";
   pagesInput.value = "";
   btnFormRead.classList.add("read");
-  btnFormRead.textContent = "read";
+  btnFormRead.textContent = "Read";
 };
 
 //Book read status form
 btnFormRead.addEventListener("click", function () {
   btnFormRead.classList.toggle("read");
   if (btnFormRead.classList.contains("read")) {
-    btnFormRead.textContent = "read";
+    btnFormRead.textContent = "Read";
   } else {
-    btnFormRead.textContent = "not read";
+    btnFormRead.textContent = "Not Read";
   }
 });
 
@@ -67,14 +67,20 @@ btnSubmit.addEventListener("click", function (e) {
     bookDisplay.insertAdjacentHTML(
       "afterbegin",
       `<div class="card card--${i}">
-      <div class="card-title">Title: ${book.title}</div>
-      <div class="card-author">Author: ${book.author}</div>
-      <div class="card-pages">${book.pages} Pages</div>
+      <h3 class="card-title">${book.title}</h3>
+      <p class="card-author">${book.author}</p>
+      <div class="card-pages">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 2 22 20">
+            <path
+              d="M19 2L14 6.5V17.5L19 13V2M6.5 5C4.55 5 2.45 5.4 1 6.5V21.16C1 21.41 1.25 21.66 1.5 21.66C1.6 21.66 1.65 21.59 1.75 21.59C3.1 20.94 5.05 20.5 6.5 20.5C8.45 20.5 10.55 20.9 12 22C13.35 21.15 15.8 20.5 17.5 20.5C19.15 20.5 20.85 20.81 22.25 21.56C22.35 21.61 22.4 21.59 22.5 21.59C22.75 21.59 23 21.34 23 21.09V6.5C22.4 6.05 21.75 5.75 21 5.5V19C19.9 18.65 18.7 18.5 17.5 18.5C15.8 18.5 13.35 19.15 12 20V6.5C10.55 5.4 8.45 5 6.5 5Z"
+            /></svg
+          ><span>${book.pages}</span>
+        </div>
       <div class="card-btns">
       <button class="btn btn-card-read ${
-        book.readStatus === "true" ? "read" : ""
+        book.readStatus === "true" ? "Read" : ""
       }" type="button">${
-        book.readStatus === "true" ? "read" : "not read"
+        book.readStatus === "true" ? "Read" : "Not Read"
       }</button>
           <button class="btn btn-card-remove" type="button">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="4 3 16 18">
@@ -99,9 +105,9 @@ btnSubmit.addEventListener("click", function (e) {
       console.log(myLibrary[i].readStatus);
       btn.classList.toggle("read");
       if (btn.classList.contains("read")) {
-        btn.textContent = "read";
+        btn.textContent = "Read";
       } else {
-        btn.textContent = "not read";
+        btn.textContent = "Not Read";
       }
     });
   });
@@ -177,9 +183,9 @@ btnCardRead.forEach(function (btn, i) {
     console.log(myLibrary[i].readStatus);
     btn.classList.toggle("read");
     if (btn.classList.contains("read")) {
-      btn.textContent = "read";
+      btn.textContent = "Read";
     } else {
-      btn.textContent = "not read";
+      btn.textContent = "Not Read";
     }
   });
 });
