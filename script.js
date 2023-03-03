@@ -83,44 +83,36 @@ const changeCardReadStatus = function (e) {
 };
 
 const appendCards = function (book, i) {
-  //Create Main Card + add Classes card card--i // append book display
   const cardEl = document.createElement("div");
   cardEl.classList.add("card", `card--${i}`);
 
-  //Create h3 element + classes card-title // append main
   const titleEl = document.createElement("h3");
   titleEl.classList.add("card-title");
   titleEl.textContent = `${book.title}`;
   cardEl.appendChild(titleEl);
 
-  //Create p element + classes card-author //append main
   const authorEl = document.createElement("p");
   authorEl.classList.add("card-author");
   authorEl.textContent = `${book.author}`;
   cardEl.appendChild(authorEl);
 
-  //create div / card pages element // append main
   const cardPagesContainerEl = document.createElement("div");
   cardPagesContainerEl.classList.add("card-pages");
   cardEl.appendChild(cardPagesContainerEl);
 
-  //create svg for card read - maybe insert as image // append card-pages
   const pagesSvgEl = document.createElement("img");
   pagesSvgEl.setAttribute("src", "img/book-open-page-variant.svg");
   pagesSvgEl.setAttribute("alt", "pages logo");
   cardPagesContainerEl.appendChild(pagesSvgEl);
 
-  //create p/span element + add num pages // append card-pages
   const numPagesEl = document.createElement("p");
   numPagesEl.textContent = `${book.pages}`;
   cardPagesContainerEl.appendChild(numPagesEl);
 
-  //create card-btns div // append main card
   const cardBtnsEl = document.createElement("div");
   cardBtnsEl.classList.add("card-btns");
   cardEl.appendChild(cardBtnsEl);
 
-  // create btn card read // append card buttons // add index i set attribute // tc
   const btnCardReadEl = document.createElement("button");
   btnCardReadEl.classList.add(
     "btn",
@@ -134,7 +126,6 @@ const appendCards = function (book, i) {
   btnCardReadEl.addEventListener("click", changeCardReadStatus);
   cardBtnsEl.appendChild(btnCardReadEl);
 
-  // create btn card remove // append card btns // add index i set attribute // tc = svg
   const btnCardRemoveEl = document.createElement("button");
   btnCardRemoveEl.classList.add("btn", "btn-card-remove");
   btnCardRemoveEl.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="4 3 16 18">
@@ -142,12 +133,9 @@ const appendCards = function (book, i) {
     d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M9,8H11V17H9V8M13,8H15V17H13V8Z"
     />`;
   btnCardRemoveEl.setAttribute("index", `${i}`);
-
   btnCardRemoveEl.addEventListener("click", removeCard);
-
   cardBtnsEl.appendChild(btnCardRemoveEl);
 
-  // append main card book display
   bookDisplay.appendChild(cardEl);
 };
 
