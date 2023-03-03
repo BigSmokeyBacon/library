@@ -8,12 +8,10 @@ const authorInput = document.querySelector("#author");
 const pagesInput = document.querySelector("#pages");
 const statusInput = document.querySelector("#status");
 
-const btnCardRead = [...document.querySelectorAll(".btn-card-read")].reverse();
 const btnNew = document.querySelector(".btn-new");
 const btnClose = document.querySelector(".btn-close");
 const btnFormRead = document.querySelector(".btn-form-status");
 const btnSubmit = document.querySelector(".btn-form-submit");
-const btnRemoveBook = [...document.querySelectorAll(".btn-card-remove")];
 
 const myLibrary = [];
 
